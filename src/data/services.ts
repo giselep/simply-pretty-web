@@ -10,6 +10,16 @@ import {
   Palette,
 } from "lucide-react";
 
+import imgMicroagulhamento from "@/assets/services/microagulhamento.jpg";
+import imgBotox from "@/assets/services/botox.jpg";
+import imgLimpezaDePele from "@/assets/services/limpeza-de-pele.jpg";
+import imgPeim from "@/assets/services/peim.jpg";
+import imgIntradermoterapia from "@/assets/services/intradermoterapia.jpg";
+import imgMesoterapia from "@/assets/services/mesoterapia.jpg";
+import imgPreenchimentoFacial from "@/assets/services/preenchimento-facial.jpg";
+import imgBioestimulador from "@/assets/services/bioestimulador-de-colageno.jpg";
+import imgCamuflagem from "@/assets/services/camuflagem-regenerativa.jpg";
+
 export interface ServiceData {
   slug: string;
   icon: typeof Sparkles;
@@ -18,7 +28,7 @@ export interface ServiceData {
   longDesc: string;
   benefits: string[];
   whoCanDo: string;
-  images: string[];
+  image: string;
 }
 
 export const services: ServiceData[] = [
@@ -38,7 +48,7 @@ export const services: ServiceData[] = [
       "Resultados naturais e progressivos",
     ],
     whoCanDo: "O microagulhamento é indicado para homens e mulheres adultos que desejam melhorar a qualidade da pele. É ideal para quem possui cicatrizes de acne, rugas finas, poros dilatados, manchas ou estrias. Não é recomendado para gestantes, pessoas com infecções ativas na pele, queloides ou doenças autoimunes sem acompanhamento médico.",
-    images: [],
+    image: imgMicroagulhamento,
   },
   {
     slug: "botox",
@@ -56,7 +66,7 @@ export const services: ServiceData[] = [
       "Resultados visíveis em poucos dias",
     ],
     whoCanDo: "Indicado para adultos a partir dos 25 anos que desejam prevenir ou tratar rugas de expressão. Ideal para quem busca um procedimento rápido e sem tempo de recuperação. Contraindicado para gestantes, lactantes, pessoas com doenças neuromusculares e alergia aos componentes da fórmula.",
-    images: [],
+    image: imgBotox,
   },
   {
     slug: "limpeza-de-pele",
@@ -74,7 +84,7 @@ export const services: ServiceData[] = [
       "Proporciona aspecto saudável e luminoso",
     ],
     whoCanDo: "A limpeza de pele é indicada para todas as pessoas, independentemente do tipo de pele — oleosa, seca, mista ou sensível. É recomendada a partir da adolescência. Recomenda-se cautela em peles com rosácea ativa, dermatite severa ou queimaduras solares recentes.",
-    images: [],
+    image: imgLimpezaDePele,
   },
   {
     slug: "peim",
@@ -92,7 +102,7 @@ export const services: ServiceData[] = [
       "Melhora a autoestima e confiança",
     ],
     whoCanDo: "Indicado para homens e mulheres que apresentam microvasos (vasinhos) nas pernas e desejam melhorar a aparência. Não é recomendado para gestantes, pessoas com trombose venosa profunda ativa, infecções cutâneas no local ou alergia aos componentes utilizados.",
-    images: [],
+    image: imgPeim,
   },
   {
     slug: "intradermoterapia",
@@ -110,7 +120,7 @@ export const services: ServiceData[] = [
       "Resultados visíveis desde a primeira sessão",
     ],
     whoCanDo: "Indicada para pessoas que desejam melhorar a qualidade da pele facial ou tratar queda capilar. Ideal para quem busca hidratação profunda, luminosidade ou fortalecimento dos cabelos. Contraindicada para gestantes, pessoas com infecções no local, alergia aos componentes ou distúrbios de coagulação não controlados.",
-    images: [],
+    image: imgIntradermoterapia,
   },
   {
     slug: "mesoterapia",
@@ -128,7 +138,7 @@ export const services: ServiceData[] = [
       "Resultados progressivos e duradouros",
     ],
     whoCanDo: "A mesoterapia é indicada para adultos que desejam tratar celulite, gordura localizada, flacidez ou rejuvenescer a pele. Não é recomendada para gestantes, lactantes, pessoas com diabetes descompensada, doenças cardíacas graves ou alergia aos componentes utilizados.",
-    images: [],
+    image: imgMesoterapia,
   },
   {
     slug: "preenchimento-facial",
@@ -146,7 +156,7 @@ export const services: ServiceData[] = [
       "Efeitos duradouros (12-18 meses)",
     ],
     whoCanDo: "Indicado para adultos que desejam restaurar volume facial, suavizar rugas profundas ou harmonizar os contornos do rosto. Ideal a partir dos 30 anos ou quando há perda de volume evidente. Contraindicado para gestantes, lactantes, pessoas com infecções ativas no local, doenças autoimunes ou alergia ao ácido hialurônico.",
-    images: [],
+    image: imgPreenchimentoFacial,
   },
   {
     slug: "bioestimulador-de-colageno",
@@ -164,7 +174,7 @@ export const services: ServiceData[] = [
       "Efeito rejuvenescedor gradual",
     ],
     whoCanDo: "Indicado para homens e mulheres a partir dos 30 anos que apresentam sinais de flacidez e desejam melhorar a firmeza da pele. Ideal para quem busca resultados naturais e progressivos. Contraindicado para gestantes, lactantes, pessoas com doenças autoimunes ativas ou infecções no local de aplicação.",
-    images: [],
+    image: imgBioestimulador,
   },
   {
     slug: "camuflagem-regenerativa",
@@ -182,6 +192,6 @@ export const services: ServiceData[] = [
       "Melhora significativa da autoestima",
     ],
     whoCanDo: "Indicada para pessoas com estrias, cicatrizes ou manchas que desejam melhorar a aparência da pele. Ideal para quem já tentou outros tratamentos sem resultados satisfatórios. Contraindicada para gestantes, pessoas com queloides ativos, infecções cutâneas no local ou alergia aos pigmentos utilizados.",
-    images: [],
+    image: imgCamuflagem,
   },
 ];

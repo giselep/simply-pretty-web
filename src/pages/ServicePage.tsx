@@ -74,8 +74,26 @@ const ServicePage = () => {
         </div>
       </section>
 
+      {/* Service Image */}
+      <section className="py-12">
+        <div className="container mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.98 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5 }}
+            className="max-w-4xl mx-auto rounded-3xl overflow-hidden shadow-lg"
+          >
+            <img
+              src={service.image}
+              alt={service.title}
+              className="w-full h-64 md:h-96 object-cover"
+            />
+          </motion.div>
+        </div>
+      </section>
+
       {/* Content */}
-      <section className="py-20">
+      <section className="pb-20">
         <div className="container mx-auto px-6">
           <div className="grid lg:grid-cols-3 gap-12 max-w-6xl mx-auto">
             {/* Main content */}
