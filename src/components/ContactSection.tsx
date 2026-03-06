@@ -61,6 +61,7 @@ const ContactSection = () => {
               className="w-full bg-secondary border-0 rounded-xl px-4 py-3 text-foreground placeholder:text-muted-foreground focus:ring-2 focus:ring-primary/30 outline-none transition"
               placeholder="Seu nome"
             />
+          </div>
           <div className="grid sm:grid-cols-2 gap-5">
             <div>
               <label className="text-sm font-medium text-foreground mb-1.5 block">
