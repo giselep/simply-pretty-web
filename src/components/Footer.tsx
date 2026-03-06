@@ -1,4 +1,4 @@
-import { Instagram, Facebook } from "lucide-react";
+import { Instagram, Facebook, MessageCircle } from "lucide-react";
 
 const Footer = () => (
   <footer className="bg-foreground py-16">
@@ -49,6 +49,14 @@ const Footer = () => (
               className="w-10 h-10 rounded-full bg-primary-foreground/10 flex items-center justify-center hover:bg-primary-foreground/20 transition-colors"
             >
               <Facebook className="w-5 h-5 text-primary-foreground" />
+            </a>
+            <a
+              href="https://wa.me/5541996147627?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20hor%C3%A1rio."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-10 h-10 rounded-full bg-primary-foreground/10 flex items-center justify-center hover:bg-primary-foreground/20 transition-colors"
+            >
+              <MessageCircle className="w-5 h-5 text-primary-foreground" />
             </a>
           </div>
         </div>
