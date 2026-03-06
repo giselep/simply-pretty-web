@@ -1,7 +1,24 @@
 import { motion } from "framer-motion";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
+import { useState } from "react";
 
-const ContactSection = () => (
+const WHATSAPP_NUMBER = "5541996147627";
+
+const ContactSection = () => {
+  const [form, setForm] = useState({ nome: "", telefone: "", email: "", servico: "", mensagem: "" });
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const { nome, telefone, email, servico, mensagem } = form;
+    if (!nome.trim() || !telefone.trim()) return;
+
+    const text = encodeURIComponent(
+      `Olá! Gostaria de agendar um horário.\n\nNome: ${nome.trim()}\nTelefone: ${telefone.trim()}${email.trim() ? `\nE-mail: ${email.trim()}` : ""}${servico && servico !== "Selecione um serviço" ? `\nServiço: ${servico}` : ""}${mensagem.trim() ? `\nMensagem: ${mensagem.trim()}` : ""}`
+    );
+    window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${text}`, "_blank");
+  };
+
+  return (
   <section id="contacto" className="py-24 bg-background">
     <div className="container mx-auto px-6">
       <motion.div
