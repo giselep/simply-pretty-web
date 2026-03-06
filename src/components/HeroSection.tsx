@@ -51,7 +51,9 @@ const HeroSection = () => (
         className="flex flex-col sm:flex-row gap-4 justify-center"
       >
         <a
-          href="#contacto"
+          href="https://wa.me/5541996147627?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20hor%C3%A1rio."
+          target="_blank"
+          rel="noopener noreferrer"
           className="bg-primary text-primary-foreground px-8 py-3.5 rounded-full font-medium hover:opacity-90 transition-opacity"
         >
           Agendar Horário
