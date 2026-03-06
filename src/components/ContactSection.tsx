@@ -46,7 +46,7 @@ const ContactSection = () => {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           className="space-y-5"
-          onSubmit={(e) => e.preventDefault()}
+          onSubmit={handleSubmit}
         >
           <div>
             <label className="text-sm font-medium text-foreground mb-1.5 block">
@@ -54,10 +54,13 @@ const ContactSection = () => {
             </label>
             <input
               type="text"
+              required
+              maxLength={100}
+              value={form.nome}
+              onChange={(e) => setForm({ ...form, nome: e.target.value })}
               className="w-full bg-secondary border-0 rounded-xl px-4 py-3 text-foreground placeholder:text-muted-foreground focus:ring-2 focus:ring-primary/30 outline-none transition"
               placeholder="Seu nome"
             />
-          </div>
           <div className="grid sm:grid-cols-2 gap-5">
             <div>
               <label className="text-sm font-medium text-foreground mb-1.5 block">
@@ -65,6 +68,10 @@ const ContactSection = () => {
               </label>
               <input
                 type="tel"
+                required
+                maxLength={20}
+                value={form.telefone}
+                onChange={(e) => setForm({ ...form, telefone: e.target.value })}
                 className="w-full bg-secondary border-0 rounded-xl px-4 py-3 text-foreground placeholder:text-muted-foreground focus:ring-2 focus:ring-primary/30 outline-none transition"
                 placeholder="(41) 99614-7627"
               />
@@ -75,6 +82,9 @@ const ContactSection = () => {
               </label>
               <input
                 type="email"
+                maxLength={255}
+                value={form.email}
+                onChange={(e) => setForm({ ...form, email: e.target.value })}
                 className="w-full bg-secondary border-0 rounded-xl px-4 py-3 text-foreground placeholder:text-muted-foreground focus:ring-2 focus:ring-primary/30 outline-none transition"
                 placeholder="geral@bouquetdeafetos.com"
               />
@@ -84,7 +94,10 @@ const ContactSection = () => {
             <label className="text-sm font-medium text-foreground mb-1.5 block">
               Serviço
             </label>
-            <select className="w-full bg-secondary border-0 rounded-xl px-4 py-3 text-foreground focus:ring-2 focus:ring-primary/30 outline-none transition">
+            <select
+              value={form.servico}
+              onChange={(e) => setForm({ ...form, servico: e.target.value })}
+              className="w-full bg-secondary border-0 rounded-xl px-4 py-3 text-foreground focus:ring-2 focus:ring-primary/30 outline-none transition">
               <option>Selecione um serviço</option>
               <option>Microagulhamento</option>
               <option>Botox</option>
@@ -103,6 +116,9 @@ const ContactSection = () => {
             </label>
             <textarea
               rows={4}
+              maxLength={1000}
+              value={form.mensagem}
+              onChange={(e) => setForm({ ...form, mensagem: e.target.value })}
               className="w-full bg-secondary border-0 rounded-xl px-4 py-3 text-foreground placeholder:text-muted-foreground focus:ring-2 focus:ring-primary/30 outline-none transition resize-none"
               placeholder="Como podemos ajudar?"
             />
@@ -185,6 +201,7 @@ const ContactSection = () => {
       </div>
     </div>
   </section>
-);
+  );
+};
 
 export default ContactSection;
