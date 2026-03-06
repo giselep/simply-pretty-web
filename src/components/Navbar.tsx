@@ -101,11 +101,9 @@ const Navbar = () => {
             )
           )}
           <a
-            href="/#contacto"
-            onClick={(e) => {
-              e.preventDefault();
-              handleNavClick("/#contacto");
-            }}
+            href="https://wa.me/5541996147627?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20hor%C3%A1rio."
+            target="_blank"
+            rel="noopener noreferrer"
             className="bg-primary text-primary-foreground px-5 py-2.5 rounded-full text-sm font-medium hover:opacity-90 transition-opacity"
           >
             Agendar
@@ -185,11 +183,9 @@ const Navbar = () => {
                 )
               )}
               <a
-                href="/#contacto"
-                onClick={(e) => {
-                  e.preventDefault();
-                  handleNavClick("/#contacto");
-                }}
+                href="https://wa.me/5541996147627?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20hor%C3%A1rio."
+                target="_blank"
+                rel="noopener noreferrer"
                 className="bg-primary text-primary-foreground px-5 py-2.5 rounded-full text-sm font-medium text-center mt-2"
               >
                 Agendar
