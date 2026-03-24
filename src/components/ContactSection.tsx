@@ -1,8 +1,9 @@
 import { motion } from "framer-motion";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
 import { useState } from "react";
+import { services } from "@/data/services";
 
-const WHATSAPP_NUMBER = "5541996147627";
+const WHATSAPP_NUMBER = "351931322707";
 
 const ContactSection = () => {
   const [form, setForm] = useState({ nome: "", telefone: "", email: "", servico: "", mensagem: "" });
@@ -13,10 +14,15 @@ const ContactSection = () => {
     if (!nome.trim() || !telefone.trim()) return;
 
     const text = encodeURIComponent(
-      `Olá! Gostaria de agendar um horário.\n\nNome: ${nome.trim()}\nTelefone: ${telefone.trim()}${email.trim() ? `\nE-mail: ${email.trim()}` : ""}${servico && servico !== "Selecione um serviço" ? `\nServiço: ${servico}` : ""}${mensagem.trim() ? `\nMensagem: ${mensagem.trim()}` : ""}`
+      `Olá! Gostaria de agendar uma massagem.\n\nNome: ${nome.trim()}\nTelefone: ${telefone.trim()}${email.trim() ? `\nE-mail: ${email.trim()}` : ""}${servico && servico !== "Selecione uma massagem" ? `\nMassagem: ${servico}` : ""}${mensagem.trim() ? `\nMensagem: ${mensagem.trim()}` : ""}`
     );
     window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${text}`, "_blank");
   };
+
+  // Flatten all treatments for the select
+  const allTreatments = services.flatMap((s) =>
+    s.treatments.map((t) => ({ category: s.title, name: t.split(" – ")[0] }))
+  );
 
   return (
   <section id="contacto" className="py-24 bg-background">
@@ -31,16 +37,15 @@ const ContactSection = () => {
           Contacto
         </p>
         <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-4">
-          Agende um horário
+          Agende a sua massagem
         </h2>
         <p className="text-muted-foreground max-w-xl mx-auto">
-          Reserve um momento só para você. Nossa equipe está pronta para
-          proporcionar uma experiência única.
+          Reserve um momento só para você. A nossa equipa está pronta para
+          proporcionar uma experiência única de bem-estar.
         </p>
       </motion.div>
 
       <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
-        {/* Form */}
         <motion.form
           initial={{ opacity: 0, x: -30 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -74,7 +79,7 @@ const ContactSection = () => {
                 value={form.telefone}
                 onChange={(e) => setForm({ ...form, telefone: e.target.value })}
                 className="w-full bg-secondary border-0 rounded-xl px-4 py-3 text-foreground placeholder:text-muted-foreground focus:ring-2 focus:ring-primary/30 outline-none transition"
-                placeholder="(41) 99614-7627"
+                placeholder="+351 931 322 707"
               />
             </div>
             <div>
@@ -93,22 +98,20 @@ const ContactSection = () => {
           </div>
           <div>
             <label className="text-sm font-medium text-foreground mb-1.5 block">
-              Serviço
+              Massagem
             </label>
             <select
               value={form.servico}
               onChange={(e) => setForm({ ...form, servico: e.target.value })}
               className="w-full bg-secondary border-0 rounded-xl px-4 py-3 text-foreground focus:ring-2 focus:ring-primary/30 outline-none transition">
-              <option>Selecione um serviço</option>
-              <option>Microagulhamento</option>
-              <option>Botox</option>
-              <option>Limpeza de Pele</option>
-              <option>PEIM</option>
-              <option>Intradermoterapia</option>
-              <option>Mesoterapia</option>
-              <option>Preenchimento Facial</option>
-              <option>Bioestimulador de Colágeno</option>
-              <option>Camuflagem Regenerativa</option>
+              <option>Selecione uma massagem</option>
+              {services.map((s) => (
+                <optgroup key={s.slug} label={s.title}>
+                  {s.treatments.map((t) => (
+                    <option key={t}>{t.split(" – ")[0]}</option>
+                  ))}
+                </optgroup>
+              ))}
             </select>
           </div>
           <div>
@@ -132,7 +135,6 @@ const ContactSection = () => {
           </button>
         </motion.form>
 
-        {/* Info */}
         <motion.div
           initial={{ opacity: 0, x: 30 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -147,7 +149,7 @@ const ContactSection = () => {
               <Phone className="w-5 h-5 text-primary mt-0.5" />
               <div>
                 <p className="text-sm font-medium text-foreground">Telefone</p>
-                <p className="text-muted-foreground text-sm">(41) 99614-7627</p>
+                <p className="text-muted-foreground text-sm">+351 931 322 707</p>
               </div>
             </div>
             <div className="flex items-start gap-4">
@@ -178,11 +180,10 @@ const ContactSection = () => {
               <MapPin className="w-5 h-5 text-primary mt-0.5 shrink-0" />
               <div>
                 <p className="text-sm font-medium text-foreground">
-                  Curitiba, Brasil
+                  Sede Portugal
                 </p>
                 <p className="text-muted-foreground text-sm">
-                  Rua Professor João Soares Barcelos, 1394 Hauer, Curitiba -
-                  81630-060
+                  Rua Doutor Bastos Gonçalves 3, 1600-898
                 </p>
               </div>
             </div>
@@ -190,10 +191,11 @@ const ContactSection = () => {
               <MapPin className="w-5 h-5 text-primary mt-0.5 shrink-0" />
               <div>
                 <p className="text-sm font-medium text-foreground">
-                  Sede Portugal
+                  Curitiba, Brasil
                 </p>
                 <p className="text-muted-foreground text-sm">
-                  Rua Doutor Bastos Gonçalves 3, 1600-898
+                  Rua Professor João Soares Barcelos, 1394 Hauer, Curitiba -
+                  81630-060
                 </p>
               </div>
             </div>

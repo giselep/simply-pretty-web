@@ -1,30 +1,30 @@
 import { motion } from "framer-motion";
-import { Cpu, Users, Sofa, Award } from "lucide-react";
+import { HandHeart, Users, Sofa, Award } from "lucide-react";
 
 const reasons = [
   {
-    icon: Cpu,
+    icon: HandHeart,
     num: "01",
-    title: "Tecnologia de Ponta",
-    desc: "Utilizamos equipamentos modernos para garantir resultados rápidos, eficazes e seguros.",
+    title: "Massagens Profissionais",
+    desc: "Técnicas terapêuticas e relaxantes realizadas por profissionais qualificados e experientes.",
   },
   {
     icon: Users,
     num: "02",
-    title: "Profissionais Qualificados",
-    desc: "Equipa formada e preparada para oferecer um atendimento personalizado.",
+    title: "Atendimento Personalizado",
+    desc: "Cada sessão é adaptada às suas necessidades específicas para melhores resultados.",
   },
   {
     icon: Sofa,
     num: "03",
-    title: "Ambiente Confortável",
-    desc: "Espaço acolhedor e pensado ao pormenor para o seu bem-estar.",
+    title: "Ambiente Acolhedor",
+    desc: "Espaço pensado ao pormenor para o seu relaxamento e bem-estar total.",
   },
   {
     icon: Award,
     num: "04",
     title: "Resultados Comprovados",
-    desc: "Clientes satisfeitas e transformadas a cada visita.",
+    desc: "Clientes satisfeitos com alívio de dores, stress reduzido e bem-estar renovado.",
   },
 ];
 

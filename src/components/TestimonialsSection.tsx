@@ -14,10 +14,10 @@ const TestimonialsSection = () => (
           Feedbacks
         </p>
         <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-4">
-          O que dizem as nossas clientes
+          O que dizem os nossos clientes
         </h2>
         <p className="text-muted-foreground max-w-lg mx-auto">
-          A satisfação das nossas clientes é o nosso maior orgulho.
+          A satisfação dos nossos clientes é o nosso maior orgulho.
         </p>
       </motion.div>
 
@@ -37,12 +37,12 @@ const TestimonialsSection = () => (
           ))}
         </div>
         <p className="text-foreground text-lg leading-relaxed text-center italic font-display mb-6">
-          "A massagem na máquina é incrível, saí me sentindo renovada.
+          "A massagem relaxante foi incrível, saí renovada e sem nenhuma tensão.
           Atendimento atencioso e pontual, recomendo de olhos fechados."
         </p>
         <div className="text-center">
           <p className="font-display font-semibold text-foreground">Julia R.</p>
-          <p className="text-muted-foreground text-sm">Massagem</p>
+          <p className="text-muted-foreground text-sm">Massagem Relaxante</p>
         </div>
       </motion.div>
     </div>
