@@ -1,13 +1,12 @@
 import { Instagram, Facebook, MessageCircle } from "lucide-react";
+import logo from "@/assets/logo.png";
 
 const Footer = () => (
   <footer className="bg-foreground py-16">
     <div className="container mx-auto px-6">
       <div className="grid md:grid-cols-3 gap-12 mb-12">
         <div>
-          <h3 className="font-display text-2xl font-bold text-primary-foreground mb-4">
-            Bouquet D'Afetos
-          </h3>
+          <img src={logo} alt="Bouquet D'Afetos" className="h-16 w-auto mb-4 brightness-0 invert" />
           <p className="text-primary-foreground/60 text-sm leading-relaxed">
             Spa de massagens profissionais dedicado ao seu bem-estar.
           </p>

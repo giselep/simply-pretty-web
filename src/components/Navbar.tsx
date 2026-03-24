@@ -3,6 +3,7 @@ import { Menu, X, ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link, useLocation } from "react-router-dom";
 import { services } from "@/data/services";
+import logo from "@/assets/logo.png";
 
 const WHATSAPP_URL = "https://wa.me/351931322707?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20massagem.";
 
@@ -35,8 +36,8 @@ const Navbar = () => {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 glass">
       <div className="container mx-auto flex items-center justify-between py-4 px-6">
-        <Link to="/" className="font-display text-2xl font-bold text-primary">
-          Bouquet D'Afetos
+        <Link to="/" className="flex items-center gap-2">
+          <img src={logo} alt="Bouquet D'Afetos" className="h-12 w-auto" />
         </Link>
 
         <div className="hidden md:flex items-center gap-8">
