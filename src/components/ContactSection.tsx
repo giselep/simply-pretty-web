@@ -149,7 +149,7 @@ const ContactSection = () => {
               <Phone className="w-5 h-5 text-primary mt-0.5" />
               <div>
                 <p className="text-sm font-medium text-foreground">Telefone</p>
-                <p className="text-muted-foreground text-sm">+351 931 322 707</p>
+                <p className="text-muted-foreground text-sm">+351 933 273 221</p>
               </div>
             </div>
             <div className="flex items-start gap-4">
