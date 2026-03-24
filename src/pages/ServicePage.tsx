@@ -6,7 +6,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { useState } from "react";
 
-const WHATSAPP_NUMBER = "351931322707";
+const WHATSAPP_NUMBER = "351933273221";
 
 const ServicePage = () => {
   const { slug } = useParams<{ slug: string }>();

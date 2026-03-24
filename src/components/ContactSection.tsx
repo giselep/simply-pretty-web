@@ -3,7 +3,7 @@ import { Phone, Mail, MapPin, Clock } from "lucide-react";
 import { useState } from "react";
 import { services } from "@/data/services";
 
-const WHATSAPP_NUMBER = "351931322707";
+const WHATSAPP_NUMBER = "351933273221";
 
 const ContactSection = () => {
   const [form, setForm] = useState({ nome: "", telefone: "", email: "", servico: "", mensagem: "" });

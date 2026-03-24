@@ -50,7 +50,7 @@ const HeroSection = () => (
         className="flex flex-col sm:flex-row gap-4 justify-center"
       >
         <a
-          href="https://wa.me/351931322707?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20massagem."
+          href="https://wa.me/351933273221?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20massagem."
           target="_blank"
           rel="noopener noreferrer"
           className="bg-primary text-primary-foreground px-8 py-3.5 rounded-full font-medium hover:opacity-90 transition-opacity"
