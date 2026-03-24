@@ -11,7 +11,6 @@ const Index = () => (
     <Navbar />
     <HeroSection />
     <AboutSection />
-    <SpecialistSection />
     <ServicesSection />
     <WhyUsSection />
     <ContactSection />
