@@ -1,4 +1,5 @@
 import { Instagram, Facebook, MessageCircle } from "lucide-react";
+import logo from "@/assets/logo.png";
 
 const Footer = () => (
   <footer className="bg-foreground py-16">
