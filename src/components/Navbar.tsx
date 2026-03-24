@@ -4,10 +4,12 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Link, useLocation } from "react-router-dom";
 import { services } from "@/data/services";
 
+const WHATSAPP_URL = "https://wa.me/351931322707?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20massagem.";
+
 const links = [
   { label: "Início", href: "/#inicio" },
   { label: "Sobre", href: "/#sobre" },
-  { label: "Serviços", href: "/#servicos", hasDropdown: true },
+  { label: "Massagens", href: "/#servicos", hasDropdown: true },
   { label: "Contacto", href: "/#contacto" },
 ];
 
@@ -22,7 +24,6 @@ const Navbar = () => {
     setMobileServicesOpen(false);
     if (href.startsWith("/#")) {
       if (location.pathname !== "/") {
-        // Navigate to home then scroll
         window.location.href = href;
       } else {
         const el = document.querySelector(href.replace("/", ""));
@@ -38,7 +39,6 @@ const Navbar = () => {
           Bouquet D'Afetos
         </Link>
 
-        {/* Desktop */}
         <div className="hidden md:flex items-center gap-8">
           {links.map((l) =>
             l.hasDropdown ? (
@@ -101,7 +101,7 @@ const Navbar = () => {
             )
           )}
           <a
-            href="https://wa.me/5541996147627?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20hor%C3%A1rio."
+            href={WHATSAPP_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="bg-primary text-primary-foreground px-5 py-2.5 rounded-full text-sm font-medium hover:opacity-90 transition-opacity"
@@ -110,7 +110,6 @@ const Navbar = () => {
           </a>
         </div>
 
-        {/* Mobile toggle */}
         <button
           onClick={() => setOpen(!open)}
           className="md:hidden text-foreground"
@@ -120,7 +119,6 @@ const Navbar = () => {
         </button>
       </div>
 
-      {/* Mobile menu */}
       <AnimatePresence>
         {open && (
           <motion.div
@@ -183,7 +181,7 @@ const Navbar = () => {
                 )
               )}
               <a
-                href="https://wa.me/5541996147627?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20hor%C3%A1rio."
+                href={WHATSAPP_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-primary text-primary-foreground px-5 py-2.5 rounded-full text-sm font-medium text-center mt-2"

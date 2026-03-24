@@ -6,7 +6,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { useState } from "react";
 
-const WHATSAPP_NUMBER = "5541996147627";
+const WHATSAPP_NUMBER = "351931322707";
 
 const ServicePage = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -19,7 +19,7 @@ const ServicePage = () => {
     return (
       <div className="min-h-screen bg-background flex items-center justify-center">
         <div className="text-center">
-          <h1 className="font-display text-3xl font-bold text-foreground mb-4">Serviço não encontrado</h1>
+          <h1 className="font-display text-3xl font-bold text-foreground mb-4">Massagem não encontrada</h1>
           <Link to="/" className="text-primary hover:underline">Voltar ao início</Link>
         </div>
       </div>
@@ -35,7 +35,7 @@ const ServicePage = () => {
     if (!nome || !telefone) return;
 
     const text = encodeURIComponent(
-      `Olá! Gostaria de agendar o serviço *${service.title}*.\\n\\nNome: ${nome}\\nTelefone: ${telefone}${mensagem ? `\\nMensagem: ${mensagem}` : ""}`
+      `Olá! Gostaria de agendar *${service.title}*.\n\nNome: ${nome}\nTelefone: ${telefone}${mensagem ? `\nMensagem: ${mensagem}` : ""}`
     );
     window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${text}`, "_blank");
   };
@@ -46,7 +46,6 @@ const ServicePage = () => {
     <div className="min-h-screen bg-background">
       <Navbar />
 
-      {/* Hero */}
       <section className="pt-28 pb-16 bg-rose-light">
         <div className="container mx-auto px-6">
           <Link
@@ -74,7 +73,6 @@ const ServicePage = () => {
         </div>
       </section>
 
-      {/* Service Image */}
       <section className="py-12">
         <div className="container mx-auto px-6">
           <motion.div
@@ -87,16 +85,17 @@ const ServicePage = () => {
               src={service.image}
               alt={service.title}
               className="w-full h-64 md:h-96 object-cover"
+              loading="lazy"
+              width={1024}
+              height={768}
             />
           </motion.div>
         </div>
       </section>
 
-      {/* Content */}
       <section className="pb-20">
         <div className="container mx-auto px-6">
           <div className="grid lg:grid-cols-3 gap-12 max-w-6xl mx-auto">
-            {/* Main content */}
             <div className="lg:col-span-2 space-y-12">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -109,6 +108,34 @@ const ServicePage = () => {
                 <p className="text-muted-foreground leading-relaxed text-base">
                   {service.longDesc}
                 </p>
+              </motion.div>
+
+              {/* Treatments list */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+              >
+                <h2 className="font-display text-2xl font-semibold text-foreground mb-6">
+                  Tipos de Massagem
+                </h2>
+                <div className="grid sm:grid-cols-2 gap-3">
+                  {service.treatments.map((t, i) => (
+                    <motion.div
+                      key={i}
+                      initial={{ opacity: 0, x: -10 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: i * 0.05 }}
+                      className="flex items-start gap-3 bg-card rounded-xl p-4 shadow-sm"
+                    >
+                      <div className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center shrink-0 mt-0.5">
+                        <Check className="w-3.5 h-3.5 text-primary" />
+                      </div>
+                      <span className="text-sm text-foreground">{t}</span>
+                    </motion.div>
+                  ))}
+                </div>
               </motion.div>
 
               {/* Benefits */}
@@ -139,7 +166,6 @@ const ServicePage = () => {
                 </div>
               </motion.div>
 
-              {/* Who can do */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -156,7 +182,6 @@ const ServicePage = () => {
               </motion.div>
             </div>
 
-            {/* Sidebar - Booking form */}
             <div className="lg:col-span-1">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -196,7 +221,7 @@ const ServicePage = () => {
                       value={form.telefone}
                       onChange={(e) => setForm({ ...form, telefone: e.target.value })}
                       className="w-full bg-secondary border-0 rounded-xl px-4 py-3 text-foreground placeholder:text-muted-foreground focus:ring-2 focus:ring-primary/30 outline-none transition text-sm"
-                      placeholder="(41) 99999-9999"
+                      placeholder="+351 931 322 707"
                     />
                   </div>
                   <div>
@@ -226,7 +251,6 @@ const ServicePage = () => {
         </div>
       </section>
 
-      {/* Other services */}
       <section className="py-20 bg-rose-light">
         <div className="container mx-auto px-6">
           <motion.div
@@ -239,11 +263,11 @@ const ServicePage = () => {
               Explore mais
             </p>
             <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">
-              Outros serviços
+              Outras massagens
             </h2>
           </motion.div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {otherServices.map((s, i) => {
               const SIcon = s.icon;
               return (
