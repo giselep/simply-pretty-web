@@ -6,7 +6,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { useState } from "react";
 
-const WHATSAPP_NUMBER = "351931322707";
+const WHATSAPP_NUMBER = "351933273221";
 
 const ServicePage = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -221,7 +221,7 @@ const ServicePage = () => {
                       value={form.telefone}
                       onChange={(e) => setForm({ ...form, telefone: e.target.value })}
                       className="w-full bg-secondary border-0 rounded-xl px-4 py-3 text-foreground placeholder:text-muted-foreground focus:ring-2 focus:ring-primary/30 outline-none transition text-sm"
-                      placeholder="+351 931 322 707"
+                      placeholder="+351 933 273 221"
                     />
                   </div>
                   <div>

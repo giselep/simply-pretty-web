@@ -47,7 +47,7 @@ const Footer = () => (
               <Facebook className="w-5 h-5 text-primary-foreground" />
             </a>
             <a
-              href="https://wa.me/351931322707?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20massagem."
+              href="https://wa.me/351933273221?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20massagem."
               target="_blank"
               rel="noopener noreferrer"
               className="w-10 h-10 rounded-full bg-primary-foreground/10 flex items-center justify-center hover:bg-primary-foreground/20 transition-colors"

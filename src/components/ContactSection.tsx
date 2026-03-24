@@ -3,7 +3,7 @@ import { Phone, Mail, MapPin, Clock } from "lucide-react";
 import { useState } from "react";
 import { services } from "@/data/services";
 
-const WHATSAPP_NUMBER = "351931322707";
+const WHATSAPP_NUMBER = "351933273221";
 
 const ContactSection = () => {
   const [form, setForm] = useState({ nome: "", telefone: "", email: "", servico: "", mensagem: "" });
@@ -79,7 +79,7 @@ const ContactSection = () => {
                 value={form.telefone}
                 onChange={(e) => setForm({ ...form, telefone: e.target.value })}
                 className="w-full bg-secondary border-0 rounded-xl px-4 py-3 text-foreground placeholder:text-muted-foreground focus:ring-2 focus:ring-primary/30 outline-none transition"
-                placeholder="+351 931 322 707"
+                placeholder="+351 933 273 221"
               />
             </div>
             <div>
@@ -149,7 +149,7 @@ const ContactSection = () => {
               <Phone className="w-5 h-5 text-primary mt-0.5" />
               <div>
                 <p className="text-sm font-medium text-foreground">Telefone</p>
-                <p className="text-muted-foreground text-sm">+351 931 322 707</p>
+                <p className="text-muted-foreground text-sm">+351 933 273 221</p>
               </div>
             </div>
             <div className="flex items-start gap-4">
