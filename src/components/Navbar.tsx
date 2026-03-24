@@ -37,7 +37,7 @@ const Navbar = () => {
     <nav className="fixed top-0 left-0 right-0 z-50 glass">
       <div className="container mx-auto flex items-center justify-between py-4 px-6">
         <Link to="/" className="flex items-center gap-2">
-          <img src={logo} alt="Bouquet D'Afetos" className="h-12 w-auto" />
+          <img src={logo} alt="Bouquet D'Afetos" className="h-20 w-auto" />
         </Link>
 
         <div className="hidden md:flex items-center gap-8">
